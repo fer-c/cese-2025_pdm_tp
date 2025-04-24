@@ -1,0 +1,69 @@
+
+<h1>Controlador de Matriz de LEDs</h1>
+
+<h2>Descripión</h2>
+<p>
+  El controlador de matriz de LEDs consiste en un sistema para controlar una matriz de LEDs SMD RGB de manera de
+  que marquen pulsos con colores configurables o automáticos (cambiando de color en cada pulso). La matriz está
+  conectada por protocolo SPI.
+</p>
+<p>
+  El estado de la configuración del controlador se informa al usuario por medio de un LCD 4x20 compatible con
+  HD44780 conectado mediante protocolo I2C.
+</p>
+<p>
+  El cambio de la configuración de la matriz se realiza por medio de una consola serial por protocolo UART.
+</p>
+<p>Los comandos a los que reacciona el controlador a través de su consola serial son:</p>
+<ul>
+  <li><code>h | H</code><br>Informa la configuración de conexión en la consola serial</li>
+  <li><code>1-9</code><br>Actualiza la frecuencia de pulso entre 100 ms y 900 ms dependiendo la entrada</li>
+  <li><code>0</code><br>Actualiza la frecuencia de pulso a 1 seg</li>
+  <li><code>a | A</code><br>Actualiza el color de la fila de manera automática (*)</li>
+  <li><code>r | R</code><br>Actualiza el color de la fila a rojo (*)</li>
+  <li><code>g | G</code><br>Actualiza el color de la fila a verde (*)</li>
+  <li><code>b | B</code><br>Actualiza el color de la fila a azul (*)</li>
+  <li><code>y | Y</code><br>Actualiza el color de la fila a amarillo (*)</li>
+  <li><code>m | M</code><br>Actualiza el color de la fila a magenta (*)</li>
+  <li><code>c | C</code><br>Actualiza el color de la fila a cyan (*)</li>
+  <li><code>w | W</code><br>Actualiza el color de la fila a blanco (*)</li>
+  <li><code>o | O</code><br>Actualiza la fila a apagado (*)</li>
+</ul>
+<p>(*) si el comando es la letra en minúscula se actualiza la fila inferior y si es la letra en mayúscula se
+  actualiza la fila superior.</p>
+
+<h2>Máquina de Estados Finitos definida</h2>
+<img src="../led-matrix-admin-states.png" alt="fsm">
+
+<h2>Diagrama de bloques</h2>
+<img src="../led-matrix-admin.png" alt="diagrama bloques">
+
+<h2>Pinout</h2>
+<img src="../pinout.png" alt="pinout">
+
+<h2>Configuraciones de los módulos utilizados</h2>
+
+<h3>Matriz SMP Led SPI</h3>
+<ul>
+  <li>Baud Rate: <code>10 MHz</code></li>
+  <li>mode: <code>MASTER</code></li>
+  <li>CPOL: <code>0</code></li>
+  <li>CPHA: <code>0</code></li>
+  <li>Bit Order: <code>MSB FIRST</code></li>
+</ul>
+
+<h3>LCD I2C</h3>
+<ul>
+  <li>Speed: <code>100 Khz</code></li>
+  <li>Address: <code>7-bit</code></li>
+</ul>
+
+<h3>Terminal Serial UART</h3>
+<ul>
+  <li>baud rate: <code>115200</code></li>
+  <li>word len: <code>8 bits</code></li>
+  <li>parity: <code>NONE</code></li>
+  <li>stop bits: <code>1</code></li>
+</ul>
+
+<a href="doxygen_crawl.html"></a>

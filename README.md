@@ -37,9 +37,17 @@ Actualiza la fila a apagado (*)
 
 (*) si el comando es la letra en minúscula se actualiza la fila inferior y si es la letra en mayúscula se actualiza la fila superior
 
+## Máquina de Estados Finitos definida
+
+![fsm](docs/led-matrix-admin-states.png)
+
 ## Diagrama de bloques
 
 ![diagrama bloques](docs/led-matrix-admin.png)
+
+## Pinout
+
+![pinout](docs/pinout.png)
 
 ## Configuraciones de los módulos utilizados
 
@@ -62,3 +70,9 @@ Actualiza la fila a apagado (*)
 - word len: `8 bits`
 - parity: `NONE`
 - stop bits: `1`
+
+## Documentacíon de código Doxygen
+
+La documentación se encuentra en
+- [docs/html/index.html](docs/html/index.html)
+- <a href="https://fer-c.github.io/cese-2025_pdm_tp/html/index.html" target="_blank">fer-c.github.io/cese-2025_pdm_tp</a>

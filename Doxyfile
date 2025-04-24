@@ -1,0 +1,20 @@
+# Project related settings
+PROJECT_NAME           = "[CESE] [PCSE] Trabajo Practico Final"
+OUTPUT_DIRECTORY       = "docs"
+
+# Input settings
+INPUT                  = API/Inc API/Src MyDrivers/Inc MyDrivers/Src App/Inc App/Src
+FILE_PATTERNS          = *.c *.h
+
+# Build related settings
+EXTRACT_ALL            = YES
+RECURSIVE              = YES
+EXTRACT_STATIC         = YES
+MACRO_EXPANSION        = YES
+
+# HTML output settings
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+# LaTeX output settings
+GENERATE_LATEX         = NO
